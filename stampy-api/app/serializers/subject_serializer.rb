@@ -1,3 +1,3 @@
 class SubjectSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :subject
 end

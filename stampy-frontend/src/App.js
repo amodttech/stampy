@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Create from './Create';
 
 function App() {
+
+
+  const [stampsList, setStampsList] = useState({})
+
+
+  async function getStamps(){
+    const response = await fetch(`http://localhost:3000/stamps`)
+    const stamps = await response.json()
+    setStampsList(stamps)
+  }
+
+  console.log('stampsList', stampsList)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={getStamps}>get em</button>
+
+      <Create />
     </div>
   );
 }
