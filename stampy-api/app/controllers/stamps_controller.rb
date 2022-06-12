@@ -46,6 +46,7 @@ class StampsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def stamp_params
-      params.require(:stamp).permit(:title, :country_id, :year_id, :subject_id, :description, :date_obtained)
+      binding.pry
+      params.permit(:title, :year, :description, :date_obtained, :image)
     end
 end
