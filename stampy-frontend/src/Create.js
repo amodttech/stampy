@@ -14,19 +14,21 @@ function Create() {
       console.log('title:', title);
       console.log('year:', year);
       console.log('description:', description);
+      console.log('fileInputRef:', fileInputRef);
 
       const formData = new FormData()
-      formData.append('title', title)
-      formData.append('year', parseInt(year))
-      formData.append('description', description)
-      formData.append('image', fileInputRef)
+      formData.append('stamp[title]', title)
+      formData.append('stamp[year]', year)
+      formData.append('stamp[description]', description)
+      formData.append('stamp[image]', fileInputRef)
+      console.log('formData', formData)
 
-      fetch(`http://localhost:3000/stamps`, {
-        method: 'POST',
-        body: formData
-      })
-      .then(res => res.json())
-      .then(data => console.log('data', data))
+      // fetch(`http://localhost:3000/stamps`, {
+      //   method: 'POST',
+      //   body: formData
+      // })
+      // .then(res => res.json())
+      // .then(data => console.log('data', data))
     }
 
     const onFileInputChange = (event) => {
