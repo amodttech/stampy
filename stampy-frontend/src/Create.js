@@ -23,12 +23,12 @@ function Create() {
       formData.append('stamp[image]', fileInputRef)
       console.log('formData', formData)
 
-      // fetch(`http://localhost:3000/stamps`, {
-      //   method: 'POST',
-      //   body: formData
-      // })
-      // .then(res => res.json())
-      // .then(data => console.log('data', data))
+      fetch(`http://localhost:3000/stamps`, {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => console.log('data', data))
     }
 
     const onFileInputChange = (event) => {
@@ -43,7 +43,7 @@ function Create() {
     const styles = { border: '1px solid black', color: 'black', padding: 20 };
     
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div>
           <label htmlFor="title">title</label>
           <input

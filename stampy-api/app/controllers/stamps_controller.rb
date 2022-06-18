@@ -17,6 +17,10 @@ class StampsController < ApplicationController
   def create
     @stamp = Stamp.new(stamp_params)
 
+    puts "create method running"
+    puts "@stamp:"
+    puts @stamp
+
     if @stamp.save
       render json: @stamp, status: :created, location: @stamp
     else
@@ -47,5 +51,8 @@ class StampsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def stamp_params
       params.require(:stamp).permit(:title, :year, :description, :date_obtained, :image)
+      puts "stamp_params running"
+      puts "params:"
+      puts params
     end
 end
