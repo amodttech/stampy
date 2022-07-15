@@ -1,17 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  collection: one
+  user: one
   title: MyString
-  country: one
-  year: one
-  subject: one
+  year: 1
+  country: MyString
+  subject: MyString
   description: MyText
-  date_obtained: 2022-06-08 19:59:22
+  aquisition: 2022-07-14 19:07:47
 
 two:
+  collection: two
+  user: two
   title: MyString
-  country: two
-  year: two
-  subject: two
+  year: 1
+  country: MyString
+  subject: MyString
   description: MyText
-  date_obtained: 2022-06-08 19:59:22
+  aquisition: 2022-07-14 19:07:47
