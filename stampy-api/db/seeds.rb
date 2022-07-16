@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-aaron = User.create({username: "aaron", password: "ass"})
-
-puts "user created"
+aTron = User.create(
+    username: "aTron", 
+    email: "atron@email.com",
+    password_digest: BCrypt::Password.create('assword')
+)

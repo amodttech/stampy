@@ -1,26 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import Create from './Create';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
 
-  const [stampsList, setStampsList] = useState({})
-
-
-  async function getStamps(){
-    const response = await fetch(`http://localhost:3000/stamps`)
-    const stamps = await response.json()
-    setStampsList(stamps)
-  }
-
-  console.log('stampsList', stampsList)
 
   return (
     <div className="App">
-      <button onClick={getStamps}>get em</button>
-
-      <Create />
+      
     </div>
   );
 }
