@@ -2,7 +2,9 @@ class CollectionSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :stamps
 
   def stamps
-    ActiveModel::SerializableResource.new(object.stamps, each_serializer: StampSerializer)
+    object.stamps.map do |stamp|
+      ::StampSerializer.new(stamp).attributes
+    end
   end
 
 end
