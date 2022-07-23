@@ -33,7 +33,7 @@ telecom = Collection.create(
 
 puts "collection, Telecom, has been created....."
 
-australia = Stamp.create(
+australia = Stamp.create!(
     name: "Victoria to Tasmania",
     description: "Commemorating the opening of submarine telephone communication to Tasmania",
     year: 1936, 
@@ -44,9 +44,15 @@ australia = Stamp.create(
     collection_id: telecom.id
 )
 
+binding.pry
+
+puts 'stamp, Australia, has been created.....'
+
 australia.image.attach(
     io: File.open('app/assets/images/Australia.jpg'),
     filename: 'australia.jpg'
 )
+
+puts 'image, Australia, has been attached.....'
 
 puts ".....seeding ended."
