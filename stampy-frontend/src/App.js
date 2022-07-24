@@ -7,14 +7,17 @@ import Signup from "./components/Signup";
 function App() {
   // State
   const [loggedIn, setLoggedIn] = useState(false);
+  const [userData, setUserData] = useState({});
 
   // Handlers
-  const handleLogin = () => {
+  const handleLogin = (user) => {
     setLoggedIn(true);
+    setUserData(user);
   };
 
   const handleLogout = () => {
     setLoggedIn(false);
+    setUserData({});
   };
 
   const loginStatus = () => {
@@ -33,7 +36,7 @@ function App() {
     <div className="app-border">
       <Home logged_in={loggedIn} />
       <Login handleLogin={handleLogin} handleLogout={handleLogout} />
-      <Signup />
+      <Signup handleLogin={handleLogin} />
     </div>
   );
 }
