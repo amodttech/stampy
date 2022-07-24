@@ -1,14 +1,12 @@
-import React from 'react'
+import React from "react";
 
-function Home({logged_in}) {
+function Home({ logged_in }) {
   return (
-    <div className='border'>
+    <div className="border">
       <h1>Home</h1>
-      <p>
-        user {logged_in ? `is` : `is NOT`} logged in.
-      </p>
+      <p>user {logged_in ? `is` : `is NOT`} logged in.</p>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
