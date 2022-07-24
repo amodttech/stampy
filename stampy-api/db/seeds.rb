@@ -44,8 +44,6 @@ australia = Stamp.create!(
     collection_id: telecom.id
 )
 
-binding.pry
-
 puts 'stamp, Australia, has been created.....'
 
 australia.image.attach(

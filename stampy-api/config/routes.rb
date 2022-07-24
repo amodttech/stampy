@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   resources :stamps
   resources :collections
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :sessions, only: [:create]
+  resources :users, only: [:create, :show, :index] do 
+      resources :items, only: [:create, :show, :index, :destroy]
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post '/users', to: 'users#create'
+  get '/users/:user_id', to: 'users#show'
+  get '/users', to: 'users#index'
+
+  post '/login',    to: 'sessions#create'
+  post '/logout',   to: 'sessions#destroy'
+  get '/logged_in', to: 'sessions#is_logged_in?'
+
+  
+
 end
